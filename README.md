@@ -1,7 +1,24 @@
 # Reto_12_mas_1
 1. Desarrollar un algoritmo que imprima de manera ascendente los valores (todos del mismo tipo) de un diccionario.
-2. Desarrollar una funcion que reciba dos diccionarios como parametros y los mezcle, es decir, que se construya un nuevo diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor que tenga la clave en el primer diccionario.
-3. Dado el JSON:
+```python
+if __name__ == "__main__":
+    dickcionario = {}
+    h = int(input("Numero de elementos: "))
+    cont = int(1)
+    while h > 0 :
+        n = str(input(f"Elemento N°{cont} "))
+        if n in dickcionario:
+            dickcionario[n] += 1
+        else:
+            dickcionario[n] = 1
+        h -= 1
+        cont += 1
+
+    for j,p in sorted(dickcionario.items()):
+        print(f"{j} : {p}")
+```
+3. Desarrollar una funcion que reciba dos diccionarios como parametros y los mezcle, es decir, que se construya un nuevo diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor que tenga la clave en el primer diccionario.
+4. Dado el JSON:
 ```JSON
 {
 	"jadiazcoronado":{
