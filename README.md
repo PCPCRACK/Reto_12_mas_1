@@ -33,7 +33,53 @@ if __name__ == "__main__":
         print(f"{j} : {p}")
 ```
 3. Desarrollar una funcion que reciba dos diccionarios como parametros y los mezcle, es decir, que se construya un nuevo diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor que tenga la clave en el primer diccionario.
-4. Dado el JSON:
+```python
+def combinar(diccionario1,diccionario2):
+
+    # Crea un bucle del tamano del diccionario2, si j esta en el diccionario no lo agrega
+    for j,p in diccionario2.items():
+        if j in diccionario1:
+            print(f"No se agregara la clave {j} porque ya esta en el diccionario")
+        else:
+            diccionario1[j] = p
+            
+    return diccionario1
+
+if __name__ == "__main__":
+
+    # Crea dos diccionarios
+    diccionario1 = {
+    22 : 'SSH',
+    80 : 'HTTP',
+    'edad' : 18,
+    'color' : 'rojo',
+    'sopa' : 'Plato compuesto de un caldo y uno o más ingredientes sólidos cocidos',
+    12100100 : "Juan María de los Santos",
+    'primos' : [2, 3, 5, 7, 11, 13, 17, 19],
+    (3, 5, 7) : 105}
+    
+    diccionario2 = {
+    31 : 'SSH',
+    80 : 'HTTP',
+    'años' : 18,
+    'rango' : 'rojo',
+    'sopa' : 'Plato compuesto de un caldo y uno o más ingredientes sólidos cocidos',
+    1210 : "Juan María de los Santos",
+    'numeros' : [2, 3, 5, 7, 11, 13, 17, 19],
+    (3, 5, 7) : 105}
+
+    # llama la funcion combinar
+    diccionarios = combinar(diccionario1,diccionario2)
+
+    # Imprime dos espacios
+    print(" ")
+    print(" ")
+
+    # Crea un bucle para j y p para los items del diccionario
+    for j,p in diccionarios.items():
+        print(f"{j} : {p}")
+```
+5. Dado el JSON:
 ```JSON
 {
 	"jadiazcoronado":{
