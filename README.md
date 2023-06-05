@@ -2,18 +2,33 @@
 1. Desarrollar un algoritmo que imprima de manera ascendente los valores (todos del mismo tipo) de un diccionario.
 ```python
 if __name__ == "__main__":
+    
+    # Crea un diccionario
     dickcionario = {}
+    
+    # Pide numero de elementos
     h = int(input("Numero de elementos: "))
+    
+    # Crea un contador
     cont = int(1)
+    
+    # Crea un bucle mientras h sea mayor que 0
     while h > 0 :
+    
+        # Pide los caracteres
         n = str(input(f"Elemento N°{cont} "))
+	
+	# Si j esta en el diccionario dickcionario le suma 1 sino la añade
         if n in dickcionario:
             dickcionario[n] += 1
         else:
             dickcionario[n] = 1
+	
+	# Resta 1 a h y suma 1 a cont con cada ciclo
         h -= 1
         cont += 1
-
+	
+    # Crea un bucle para j y p para los items del del diccionario, con sorted organiza los elementos en orden ascendente
     for j,p in sorted(dickcionario.items()):
         print(f"{j} : {p}")
 ```
