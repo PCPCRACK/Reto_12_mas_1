@@ -101,7 +101,34 @@ if __name__ == "__main__":
  Cree un programa que lea de un archivo con dicho JSON y: 
  - Imprima los nombres completos (nombre y apellidos) de las personas que practican el deporte ingresado por el usuario.
  - Imprima los nombres completos (nombre y apellidos) de las personas que esten en un rango de edades dado por el usuario.
+```python
+import json
+from pprint import pprint
 
+# Cargar archivo
+readFile = open('data_file.json', "r")
+data = json.load(readFile)
+readFile.close()
+
+pprint(data)
+
+n = str(input("la primera letra en MAYUS, ingrese un deporte: "))
+h = int(input("rango min de edad: "))
+j = int(input("rango max de edad: "))
+q = list()
+contador = h
+
+for w in range(j-h+1):
+    q.append(contador)
+    contador += 1
+print(q[1])
+for p,j in data.items():
+    if n in j.get('deportes'):
+        print(j.get('nombres'),j.get('apellidos'), " practica ", n)
+    for r in range(len(q)):
+        if q[r] in j.get('edad') :
+            print(j.get('nombres'),j.get('apellidos'), " esta en el rango de edades ")
+```
 4. El siguiente código contiene un JSON con el pronostivo detallado del clima para 8 días:
 
 ```python
